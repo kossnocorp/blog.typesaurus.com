@@ -138,4 +138,16 @@ Instead I suggest you to [follow the Getting Started guide](https://typesaurus.c
 
 ## Roadmap
 
-I'm just got started.
+I might sound cliche but I’m actually getting started. I believe Typesaurus X will provide long-lasting foundation and won’t drastically change anymore, but there’re many things around the ecosystem that I want to do.
+
+I already had working MVP of TypeScript DSL for writing security rules. I want make it happen for X too.
+
+I want to have first-class integration with Firebase Functions.
+
+I have plan to build tight integration with Next.js so docs can be easily passed between server and client components.
+
+I would like to make migrating Firestore a trivial task.
+
+There’s Realtime Database that also begs for type-safety.
+
+I can go on and on, so if you’re interested - follow me on Twitter and sponsor me at GitHub!
