@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "typesaurus-com"
-  }
+  },
+  "targets": {
+    "typesaurus-com": {
+      "hosting": {
+        "typesaurus-blog": [
+          "typesaurus-com"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
