@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "typesaurus-blog",
+    "site": "typesaurus-blog",
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
