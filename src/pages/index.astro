@@ -1,0 +1,62 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import Pattern from "../components/Pattern.astro";
+import Author from "../components/Author.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => +b.data.pubDate - +a.data.pubDate
+);
+const first = posts[0];
+if (!first) throw new Error("No posts found");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="dark:bg-cinder-950">
+    <Header />
+
+    <main
+      class="w-full max-w-screen-lg m-auto px-2 pt-5 pb-10 sm:px-10 sm:py-20"
+    >
+      <section>
+        <ul
+          class="flex flex-col items-center space-y-8 sm:space-y-10 text-waika-900"
+        >
+          <li class="w-full">
+            <a href={`/${first.slug.slice(11)}/`}>
+              <Pattern title={first.data.title} date={first.data.pubDate} />
+            </a>
+          </li>
+
+          {
+            posts.slice(1).map((post) => (
+              <li class="w-full max-w-screen-sm border-b border-waika-100 pb-8 sm:pb-10 last:border-none last:pb-0 dark:border-waika-950">
+                <a href={`/${post.slug.slice(11)}/`} class="space-y-2">
+                  <h3 class="text-2xl sm:text-3xl font-bold leading-tight text-waika-950 dark:text-waika-300">
+                    {post.data.title}
+                  </h3>
+
+                  <div class="flex space-x-2 items-center text-waika-800 dark:text-waika-600">
+                    <Author prefix="By" />
+                    <span>·</span>
+                    <FormattedDate date={post.data.pubDate} />
+                  </div>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

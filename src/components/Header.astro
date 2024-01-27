@@ -1,0 +1,44 @@
+---
+interface Props {
+  mode?: "post" | "list";
+}
+
+const { mode } = Astro.props;
+---
+
+<header
+  class:list={[
+    "w-full",
+    mode === "post"
+      ? "absolute top-0 left-0 z-10"
+      : "bg-[url('/pattern.svg')] bg-repeat bg-[length:87px_50px] overflow-hidden",
+    ,
+  ]}
+>
+  <nav
+    class:list={[
+      "text-waika-50 ",
+      mode === "post" ? "" : "bg-ultramarine-950/90",
+    ]}
+  >
+    <div
+      class="grid grid-cols-2 items-center px-4 h-14 max-w-screen-xl mx-auto"
+    >
+      <h2>
+        <a href="/" class="flex items-center space-x-2 text-2xl">
+          <img src="/logo.png" alt="Typesaurus logo" class="w-8" />
+          <span class="inline-flex space-x-1"
+            ><span class="hidden sm:inline">Typesaurus</span><span
+              class="text-waika-300">Blog</span
+            ></span
+          ></a
+        >
+      </h2>
+
+      <div class="text-xl flex space-x-3 justify-end text-waika-300">
+        <a href="https://typesaurus.com">Docs</a>
+        <a href="https://github.com/kossnocorp/typesaurus">GitHub</a>
+      </div>
+    </div>
+  </nav>
+</header>

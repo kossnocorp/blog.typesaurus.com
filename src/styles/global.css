@@ -1,0 +1,19 @@
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+}
+
+.astro-code {
+  display: block;
+  scrollbar-color: #000 #031c4f;
+  scrollbar-width: thin;
+}
+
+.astro-code::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+}
+
+astro-code::-webkit-scrollbar-thumb {
+  background: #031c4f;
+}
