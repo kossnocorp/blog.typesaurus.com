@@ -1,7 +1,7 @@
 ---
 title: "Typesaurus X is out!"
 description: The best way to use Firestore with TypeScript is now even better!
-pubDate: "Jan 29 2024"
+pubDate: "Jan 28 2024"
 ---
 
 **TL;DR;**: A new major 10th version of type-safe ODM for Firestore is out with a brand new API and docs website.
@@ -163,3 +163,7 @@ I want to make migrating Firestore a trivial task. Right now, migrating Firestor
 There's Realtime Database that also begs for type safety.
 
 I can go on and on, so if you're interested - [follow me on Twitter](https://twitter.com/kossnocorp) and [sponsor me on GitHub](https://github.com/sponsors/kossnocorp)!
+
+---
+
+Thank you all my [GitHub sponsors](https://github.com/sponsors/kossnocorp) and especially [Seated](https://github.com/seated) for supporting me while I was working on Typesaurus X!
